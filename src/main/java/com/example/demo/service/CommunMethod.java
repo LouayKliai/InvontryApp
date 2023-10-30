@@ -1,13 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Categorie;
-import com.example.demo.entity.Utilisateurs;
+import com.example.demo.entity.AuditModel;
 
 public interface CommunMethod {
-	Utilisateurs modifierProfile(Utilisateurs user);
-	void ajouterCategorie(Categorie categorie);
-	boolean supprimerCategorie(Categorie categorie);
-	boolean modifierCategorie(Categorie categorie);
+	AuditModel modifierProfile(AuditModel user);
+	void  ajouterCategorie(Categorie categorie);
+	void supprimerCategorie(Categorie categorie);
+	Categorie modifierCategorie(Categorie categorie);
 	   
        
        

@@ -1,5 +1,7 @@
 package com.example.demo.repository;
 
-public interface GestionCompteRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface GestionCompteRepository extends JpaRepository<GestionCompteRepository, Integer> {
 
 }

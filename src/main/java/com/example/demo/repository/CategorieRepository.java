@@ -1,5 +1,8 @@
 package com.example.demo.repository;
 
-public interface CategorieRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.example.demo.entity.Categorie;
+
+public interface CategorieRepository extends JpaRepository<Categorie, Integer>{
 }

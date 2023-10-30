@@ -5,55 +5,54 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entity.AuditModel;
 import com.example.demo.entity.Categorie;
-import com.example.demo.entity.Utilisateurs;
 import com.example.demo.repository.AdmistrateurRepositry;
+import com.example.demo.repository.AuditModelRepositry;
+import com.example.demo.repository.CategorieRepository;
+import com.example.demo.repository.UtilisateurRepositry;
 @Service
 public class AdminstrateurServiceImpl implements AdministrateurService , CommunMethod {
+	@Autowired
+	AdmistrateurRepositry adminRepo;
+	@Autowired
+	AuditModelRepositry auditRepo;
+	@Autowired
+	CategorieRepository catRepo;
+	@Autowired
+	UtilisateurRepositry utilisateurRep;
 
-	 	@Autowired
-		private AdmistrateurRepositry admin;
 	
-	@Override
-	public Utilisateurs modifierProfile(Utilisateurs user) {
-		
-		return null;
-	}
 
 	@Override
 	public void ajouterCategorie(Categorie categorie) {
-		// TODO Auto-generated method stub
+		catRepo.save(categorie);
+	}
+
+	@Override
+	public void supprimerCategorie(Categorie categorie) {
+		catRepo.delete(categorie);
 		
 	}
 
 	@Override
-	public boolean supprimerCategorie(Categorie categorie) {
-		// TODO Auto-generated method stub
-		return false;
+	public Categorie modifierCategorie(Categorie categorie) {
+		return catRepo.saveAndFlush(categorie);
 	}
 
 	@Override
-	public boolean modifierCategorie(Categorie categorie) {
-		// TODO Auto-generated method stub
-		return false;
+	public AuditModel ajouterUtilisateur(AuditModel user) {
+		return auditRepo.save(user);
+	}
+	@Override
+	public List<AuditModel> findAllUser() {
+		return auditRepo.findAll();
 	}
 
 	@Override
-	public boolean ajouterUtilisateur(Utilisateurs user) {
-		// TODO Auto-generated method stub
-		return false;
+	public AuditModel modifierProfile(AuditModel user) {
+		return auditRepo.save(user);
 	}
-
-	@Override
-	public List<Utilisateurs> consulterListUtilisateur() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean modifierProfil(Utilisateurs user) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
+	
 }

@@ -11,14 +11,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Administrateur  extends Utilisateurs{
+public class Administrateur  extends AuditModel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@OneToMany(mappedBy = "adminstrateur")
 	private List<Categorie> list_categorie;
 	@OneToMany(mappedBy  ="admin")
 	private List<Gestion_des_comptes> list_gestion;
-	//@Override
-	void modifierProfile(Utilisateurs user) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
 }

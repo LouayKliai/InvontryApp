@@ -2,7 +2,7 @@ package com.example.demo.entity;
 
 import java.util.List;
 
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -15,7 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Produit {
-@Id
+	@Id
+	@Column(unique=true,nullable = false)
 	private int ID_produit;
 	private String Nom_produit;
 	private String Unitee_produit;

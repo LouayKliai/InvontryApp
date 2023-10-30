@@ -6,13 +6,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class ChefDeDepartement extends Utilisateurs{
+public class ChefDeDepartement extends AuditModel{
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 @OneToMany(mappedBy="chef_Departement")
 	private List<Produit> list_Produit;
 
-@Override
-void modifierProfile(Utilisateurs user) {
-	// TODO Auto-generated method stub
-	
-}
+
 }

@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Utilisateurs;
+import com.example.demo.entity.AuditModel;
 
 public interface ChefDeDepartementService {
-	Utilisateurs modifierProfile(Utilisateurs user);
+	AuditModel modifierProfile(AuditModel user);
 	boolean acceptDemande();
 	boolean refuseDemande();
 	void generePDF();

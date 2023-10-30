@@ -3,8 +3,8 @@ package com.example.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entity.AuditModel;
-import com.example.demo.entity.Utilisateur;
+import com.example.demo.service.UtilisateurService;
 
-public interface UtilisateurRepositry extends JpaRepository<Utilisateur, Integer> {
+public interface AuditModelRepositry extends JpaRepository<AuditModel, Integer> {
 
 }

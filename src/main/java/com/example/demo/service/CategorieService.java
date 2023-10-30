@@ -1,5 +1,11 @@
 package com.example.demo.service;
 
-public interface CategorieService {
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Categorie;
+
+@Service
+public interface CategorieService  {
+	void ajouterCategorie(Categorie categorie);
 
 }
